@@ -15,7 +15,7 @@ public class _680ValidPalindromeII {
 		return true;
     }
 	
-	public boolean isValid(String s, int i, int j) {
+	private boolean isValid(String s, int i, int j) {
 		while(i < j) {
 			if(s.charAt(i) != s.charAt(j)) {
 				return false;
