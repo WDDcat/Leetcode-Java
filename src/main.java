@@ -3,8 +3,8 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		_5LongestPalindromicSubstring solution = new _5LongestPalindromicSubstring();
-		System.out.println(solution.longestPalindrome("abaa"));
+		_76MinimumWindowSubstring solution = new _76MinimumWindowSubstring();
+		System.out.println(solution.minWindow("a", "b"));
 		
 		return;
 	}
