@@ -1,6 +1,13 @@
 
 public class _84LargestRectangleinHistogram {
 	public int largestRectangleArea(int[] heights) {
+		/*
+		 * 	这题也没咋看别人的思路
+		 * 	就试着写了一下方法
+		 * 	用每一个高度向两侧延伸，记录最大面积
+		 * 	
+		 * 	题解里好像有时间复杂度更低的解法*/
+		
 		int area = 0;
 		for(int i = 0; i < heights.length; i++) {
 			int height = heights[i];
