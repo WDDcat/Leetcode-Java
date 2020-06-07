@@ -93,14 +93,23 @@ public class _126WordLadderII {
         return res;
     }
 	
-	Boolean transformCheck(String str1, String str2) {
-		boolean same = true;
-		for(int i = 0; i < str1.length(); i++) {
-			if(str1.charAt(i) != str2.charAt(i)) {
-				if(same) same = false;
-				else return false;
-			}
-		}
-		return !same;
-	}
+//	Boolean transformCheck(String str1, String str2) {
+//		boolean same = true;
+//		for(int i = 0; i < str1.length(); i++) {
+//			if(str1.charAt(i) != str2.charAt(i)) {
+//				if(same) same = false;
+//				else return false;
+//			}
+//		}
+//		return !same;
+//	}
+	boolean transformCheck(String str1, String str2) {
+        int differences = 0;
+        for (int i = 0; i < str1.length() && differences < 2; i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
+                ++differences;
+            }
+        }
+        return differences == 1;
+    }
 }
