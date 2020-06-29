@@ -1,5 +1,5 @@
 
-public class JianZhi_offer_64 {
+public class JianZhi_Offer_64 {
 	public int sumNums(int n) {
 //		return n == 0 ? 0 : n + sumNums(n - 1);
 		
