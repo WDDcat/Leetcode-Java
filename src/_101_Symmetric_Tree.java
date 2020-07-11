@@ -4,19 +4,21 @@ public class _101_Symmetric_Tree {
 		int val;
 		TreeNode left;
 		TreeNode right;
-		TreeNode(int x) {val = x;}
+
+		TreeNode(int x) {
+			val = x;
+		}
 	}
-	
-	/*public boolean isSymmetric(TreeNode root) {
-        if(root == null) return true;
-        return isLeftEqualsRight(root.left, root.right);
-    }
-	
-	public boolean isLeftEqualsRight(TreeNode left, TreeNode right) {
-        if(left == null && right == null) return true;
-        if(left == null || right == null) return false;
-        return left.val == right.val && isLeftEqualsRight(left.right, right.left) && isLeftEqualsRight(left.left, right.right);
-	}*/
+
+	/*
+	 * public boolean isSymmetric(TreeNode root) { if(root == null) return true;
+	 * return isLeftEqualsRight(root.left, root.right); }
+	 * 
+	 * public boolean isLeftEqualsRight(TreeNode left, TreeNode right) { if(left ==
+	 * null && right == null) return true; if(left == null || right == null) return
+	 * false; return left.val == right.val && isLeftEqualsRight(left.right,
+	 * right.left) && isLeftEqualsRight(left.left, right.right); }
+	 */
 	
 	/*
 	 * 	上面的方法时我一开始想到的递归方法。即：
@@ -32,27 +34,30 @@ public class _101_Symmetric_Tree {
 	 * 	这样的执行时间可以缩到0ms
 	 * 	不知道为啥
 	 * */
-	
+
 	public boolean isSymmetric(TreeNode root) {
-        if(root == null) return true;
-        reverseTree(root.left);
-        return isEqual(root.left, root.right);
-    }
-	
-	void reverseTree(TreeNode root){
-        if(root == null){
-            return;
-        }
-        TreeNode tmp = root.left;
-        root.left = root.right;
-        root.right = tmp;
-        reverseTree(root.left);
-        reverseTree(root.right);
-    }
-	
-	boolean isEqual(TreeNode left, TreeNode right){
-        if(left == null && right == null) return true;
-        if(left == null || right == null) return false;
-        return left.val == right.val && isEqual(left.left,right.left) && isEqual(left.right, right.right);
-    }
+		if (root == null)
+			return true;
+		reverseTree(root.left);
+		return isEqual(root.left, root.right);
+	}
+
+	void reverseTree(TreeNode root) {
+		if (root == null) {
+			return;
+		}
+		TreeNode tmp = root.left;
+		root.left = root.right;
+		root.right = tmp;
+		reverseTree(root.left);
+		reverseTree(root.right);
+	}
+
+	boolean isEqual(TreeNode left, TreeNode right) {
+		if (left == null && right == null)
+			return true;
+		if (left == null || right == null)
+			return false;
+		return left.val == right.val && isEqual(left.left, right.left) && isEqual(left.right, right.right);
+	}
 }

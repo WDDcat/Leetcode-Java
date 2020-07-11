@@ -1,6 +1,6 @@
 
 public class _108_Convert_Sorted_Array_to_Binary_Search_Tree {
-	
+
 	/*
 	 * 	想复杂了，一开始还在想怎么构建平衡二叉树
 	 * 	后来发现题目中给的是排序数组
@@ -13,16 +13,21 @@ public class _108_Convert_Sorted_Array_to_Binary_Search_Tree {
 		int val;
 		TreeNode left;
 		TreeNode right;
-		TreeNode(int x) { val = x; }
+
+		TreeNode(int x) {
+			val = x;
+		}
 	}
-	
+
 	public TreeNode sortedArrayToBST(int[] nums) {
-		if(nums.length == 0) return null;
+		if (nums.length == 0)
+			return null;
 		return createTree(nums, 0, nums.length);
-    }
-	
+	}
+
 	TreeNode createTree(int[] nums, int begin, int end) {
-		if(begin == end) return null;
+		if (begin == end)
+			return null;
 		int mid = (begin + end) / 2;
 		TreeNode root = new TreeNode(nums[mid]);
 		root.left = createTree(nums, begin, mid);

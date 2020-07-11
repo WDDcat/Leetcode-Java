@@ -1,6 +1,7 @@
 
 public class _287_Find_the_Duplicate_Number {
 	public int findDuplicate(int[] nums) {
+
 		/*
 		 * 	缘分妙不可言
 		 * 	这题真是太有意思了，可能就算我已经做过一遍，再做还是不知道…
@@ -20,23 +21,26 @@ public class _287_Find_the_Duplicate_Number {
 		 * 	让他们再相遇一次
 		 * 	有人证明了他们一定会在入口处相遇
 		 * */
-		if(nums.length <= 2){
-            return nums[0];
-        }
 		
-		int i = 0,j = 0;
-		while(true){
-            i = nums[i];
-            j = nums[nums[j]];
-            if(i == j) break;
-        }
-		
+		if (nums.length <= 2) {
+			return nums[0];
+		}
+
+		int i = 0, j = 0;
+		while (true) {
+			i = nums[i];
+			j = nums[nums[j]];
+			if (i == j)
+				break;
+		}
+
 		i = 0;
-        while(true){
-            i = nums[i];
-            j = nums[j];
-            if(i == j) break;
-        }
-        return i;
+		while (true) {
+			i = nums[i];
+			j = nums[j];
+			if (i == j)
+				break;
+		}
+		return i;
 	}
 }

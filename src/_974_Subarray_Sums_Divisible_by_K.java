@@ -37,7 +37,7 @@ public class _974_Subarray_Sums_Divisible_by_K {
 		Map<Integer, Integer> record = new HashMap<>();
 		record.put(0, 1);
 		int sum = 0, ans = 0;
-		for(int num : A) {
+		for (int num : A) {
 			sum += num;
 			int mod = (sum % K + K) % K;
 			int same = record.getOrDefault(mod, 0);
@@ -45,5 +45,5 @@ public class _974_Subarray_Sums_Divisible_by_K {
 			record.put(mod, same + 1);
 		}
 		return ans;
-    }
+	}
 }

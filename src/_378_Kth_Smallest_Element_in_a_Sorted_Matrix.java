@@ -1,6 +1,6 @@
 
 public class _378_Kth_Smallest_Element_in_a_Sorted_Matrix {
-	
+
 	/*
 	 * 	参考了题解中的一个二分法查找
 	 * 	
@@ -22,24 +22,23 @@ public class _378_Kth_Smallest_Element_in_a_Sorted_Matrix {
 		int n = matrix.length;
 		int left = matrix[0][0];
 		int right = matrix[n - 1][n - 1];
-		while(left < right) {
+		while (left < right) {
 			int mid = (left + right) / 2;
 			int count = findNotBiggerThanMid(matrix, mid, n);
-			if(count < k) {
+			if (count < k) {
 				left = mid + 1;
-			}
-			else {
+			} else {
 				right = mid;
 			}
 		}
 		return right;
-    }
-	
+	}
+
 	int findNotBiggerThanMid(int[][] matrix, int mid, int length) {
 		int count = 0;
-		for(int i = 0; i < length; i++) {
+		for (int i = 0; i < length; i++) {
 			int j = length - 1;
-			while(matrix[i][j] > mid) {
+			while (matrix[i][j] > mid) {
 				j--;
 			}
 			count += j + 1;

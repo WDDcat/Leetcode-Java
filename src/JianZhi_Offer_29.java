@@ -20,55 +20,51 @@ public class JianZhi_Offer_29 {
 		int total = width * height;
 		int[] ans = new int[total];
 		int curRow = 0, curCol = 0;
-		int direction = 1; //1-->右 2-->下 3-->左 4-->上 
+		int direction = 1; // 1-->右 2-->下 3-->左 4-->上
 		int minRow = 0, maxRow = height - 1;
 		int minCol = 0, maxCol = width - 1;
-		for(int  i = 0; i < total; i++) {
+		for (int i = 0; i < total; i++) {
 			ans[i] = matrix[curRow][curCol];
-			switch(direction) {
+			switch (direction) {
 			case 1:
-				if(curCol == maxCol) {
+				if (curCol == maxCol) {
 					direction = 2;
 					curRow++;
 					minRow++;
-				}
-				else {
+				} else {
 					curCol++;
 				}
 				break;
 			case 2:
-				if(curRow == maxRow) {
+				if (curRow == maxRow) {
 					direction = 3;
 					curCol--;
 					maxCol--;
-				}
-				else {
+				} else {
 					curRow++;
 				}
 				break;
 			case 3:
-				if(curCol == minCol) {
+				if (curCol == minCol) {
 					direction = 4;
 					curRow--;
 					maxRow--;
-				}
-				else {
+				} else {
 					curCol--;
 				}
 				break;
 			case 4:
-				if(curRow == minRow) {
+				if (curRow == minRow) {
 					direction = 1;
 					curCol++;
 					minCol++;
-				}
-				else {
+				} else {
 					curRow--;
 				}
 				break;
 			}
 		}
-		
+
 		return ans;
-    }
+	}
 }

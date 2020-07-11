@@ -18,36 +18,36 @@ public class _76_Minimum_Window_Substring {
 		 * */
 		
 		if (s == null || s == "" || t == null || t == "" || s.length() < t.length()) {
-            return "";
-        }
-		
-		int[] needs = new int[128];	//统计t中字符出现次数
-		int[] windows = new int[128];	//滑动窗口中字符出现次数
-		
-		for(char ch : t.toCharArray()) {
+			return "";
+		}
+
+		int[] needs = new int[128]; // 统计t中字符出现次数
+		int[] windows = new int[128]; // 滑动窗口中字符出现次数
+
+		for (char ch : t.toCharArray()) {
 			needs[ch]++;
 		}
-		
+
 		int l = 0, r = 0;
 		int count = 0;
-		
+
 		int minLength = s.length() + 1;
 		int minL = 0, minR = -1;
-		
-		while(r < s.length()) {
+
+		while (r < s.length()) {
 			char ch = s.charAt(r);
-			if(needs[ch] > windows[ch]) {
+			if (needs[ch] > windows[ch]) {
 				count++;
 			}
-			
+
 			windows[ch]++;
-			
-			while(count == t.length()) {
+
+			while (count == t.length()) {
 				ch = s.charAt(l);
-				if(needs[ch] == windows[ch]) {
+				if (needs[ch] == windows[ch]) {
 					count--;
 				}
-				if(r - l + 1 < minLength) {
+				if (r - l + 1 < minLength) {
 					minLength = r - l + 1;
 					minL = l;
 					minR = r;
@@ -57,7 +57,7 @@ public class _76_Minimum_Window_Substring {
 			}
 			r++;
 		}
-		
+
 		return s.substring(minL, minR + 1);
-    }
+	}
 }

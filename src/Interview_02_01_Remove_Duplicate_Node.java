@@ -14,22 +14,22 @@ public class Interview_02_01_Remove_Duplicate_Node {
 		 * 	³öÏÖ¾Íremove
 		 * */
 		
-		if(head == null || head.next == null) return head;
+		if (head == null || head.next == null)
+			return head;
 
-        boolean[] exist = new boolean[20001];
-        exist[head.val] = true;
+		boolean[] exist = new boolean[20001];
+		exist[head.val] = true;
 		ListNode p = head.next, pre = head;
-		while(p != null) {            
-			if(exist[p.val]) {
+		while (p != null) {
+			if (exist[p.val]) {
 				pre.next = p.next;
-                p = pre.next;
-			}
-			else {
+				p = pre.next;
+			} else {
 				exist[p.val] = true;
 				pre = p;
 				p = p.next;
 			}
 		}
 		return head;
-    }
+	}
 }

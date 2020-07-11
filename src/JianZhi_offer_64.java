@@ -13,5 +13,5 @@ public class JianZhi_Offer_64 {
 		
 		Boolean flag = n > 0 && (n += sumNums(n - 1)) > 0;
 		return n;
-    }
+	}
 }

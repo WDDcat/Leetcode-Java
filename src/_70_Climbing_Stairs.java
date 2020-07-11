@@ -10,7 +10,7 @@ public class _70_Climbing_Stairs {
 		int last = 0;
 		int current = 0;
 		int next = 1;
-		for(int i = 1; i <= n; i++) {
+		for (int i = 1; i <= n; i++) {
 			last = current;
 			current = next;
 			next = last + current;

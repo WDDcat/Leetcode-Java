@@ -1,7 +1,7 @@
 
 public class _1014_Best_Sightseeing_Pair {
 	public int maxScoreSightseeingPair(int[] A) {
-		
+
 		/*
 		 * 	一开始的暴力解法超时了
 		 * 	
@@ -19,12 +19,12 @@ public class _1014_Best_Sightseeing_Pair {
 		
 		int buff = A[0];
 		int ans = 0;
-		for(int j = 1; j < A.length; j++) {
+		for (int j = 1; j < A.length; j++) {
 			buff--;
 			ans = Math.max(ans, buff + A[j]);
-			//同时要看现在的buff和新提供的buff哪个更强
+			// 同时要看现在的buff和新提供的buff哪个更强
 			buff = Math.max(buff, A[j]);
 		}
 		return ans;
-    }
+	}
 }

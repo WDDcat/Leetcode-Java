@@ -2,24 +2,23 @@
 public class _125_Valid_Palindrome {
 	public boolean isPalindrome(String s) {
 		int i = 0, j = s.length() - 1;
-		while(i < j) {
-			while(i < j && !Character.isLetterOrDigit(s.charAt(i))) {
+		while (i < j) {
+			while (i < j && !Character.isLetterOrDigit(s.charAt(i))) {
 				i++;
 			}
-			while(i < j && !Character.isLetterOrDigit(s.charAt(j))) {
+			while (i < j && !Character.isLetterOrDigit(s.charAt(j))) {
 				j--;
 			}
-			if(Character.toLowerCase(s.charAt(i)) == Character.toLowerCase(s.charAt(j))) {
+			if (Character.toLowerCase(s.charAt(i)) == Character.toLowerCase(s.charAt(j))) {
 				i++;
 				j--;
-			}
-			else {
+			} else {
 				return false;
 			}
 		}
 		return true;
-    }
-	
+	}
+
 	/*
 	 * 	本来吧觉得写了两个函数用于判断
 	 * 	1. 是否是字母或数字
@@ -32,7 +31,7 @@ public class _125_Valid_Palindrome {
 	 * 	世界真奇妙！
 	 * 	*/
 	
-//	boolean isLegal(char c) {
+// boolean isLegal(char c) {
 //		if(c >= 48 && c <= 57) return true;
 //		if(c >= 65 && c <= 90) return true;
 //		if(c >= 97 && c <= 122) return true;

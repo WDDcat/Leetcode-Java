@@ -21,41 +21,34 @@ public class _10_Regular_Expression_Matching {
 		 * */
 		
 		if (s == null || p == null) {
-            return false;
-        }
-		
+			return false;
+		}
+
 		boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
 		dp[0][0] = true;
-		
+
 		for (int i = 0; i < p.length(); i++) { // here's the p's length, not s's
-            if (p.charAt(i) == '*' && dp[0][i - 1]) {                    
-                dp[0][i + 1] = true; // here's y axis should be i+1
-            }
-        }
-		
-		for(int i = 0; i < s.length(); i++) {
-			for(int j = 0; j < p.length(); j++) {
-				if(p.charAt(j) == s.charAt(i) || p.charAt(j) == '.') {
+			if (p.charAt(i) == '*' && dp[0][i - 1]) {
+				dp[0][i + 1] = true; // here's y axis should be i+1
+			}
+		}
+
+		for (int i = 0; i < s.length(); i++) {
+			for (int j = 0; j < p.length(); j++) {
+				if (p.charAt(j) == s.charAt(i) || p.charAt(j) == '.') {
 					dp[i + 1][j + 1] = dp[i][j];
-				}
-				else if(p.charAt(j) == '*') {
-					if(p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != '.') {
+				} else if (p.charAt(j) == '*') {
+					if (p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != '.') {
 						dp[i + 1][j + 1] = dp[i + 1][j - 1];
-					}
-					else {
+					} else {
 						dp[i + 1][j + 1] = dp[i][j + 1] || dp[i + 1][j] || dp[i + 1][j - 1];
 					}
 				}
 			}
 		}
-		
+
 		return dp[s.length()][p.length()];
-		
-		
-		
-		
-		
-		
+
 //		for(int i = 0; i < s.length(); i++) {
 //			System.out.println(s.substring(i, s.length()) + " -- " + p);
 //			if(p.length() >= 2 && p.charAt(1) == '*') {
@@ -86,5 +79,5 @@ public class _10_Regular_Expression_Matching {
 //		}
 //		if(p.length() > 0) return false;
 //		return true;
-    }
+	}
 }
