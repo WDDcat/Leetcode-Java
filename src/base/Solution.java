@@ -1,16 +1,14 @@
 package base;
-import general_2000_2099._2038_Delete_the_Color_If_Adjacent_Colors_are_Same;
+import general_0100_0199._172_Zero_After_Factorial;
 
 public class Solution {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		_2038_Delete_the_Color_If_Adjacent_Colors_are_Same test = new _2038_Delete_the_Color_If_Adjacent_Colors_are_Same();
-		
-		String color = "AAABABB";
+		_172_Zero_After_Factorial test = new _172_Zero_After_Factorial();
 	
-		System.out.println(test.winnerOfGame(color));
+		System.out.println(test.trailingZeroes(30));
 		return;
 		
 	}
